@@ -32,7 +32,7 @@ public class MainClass {
             System.out.println(month.getName());
         }
 		
-		//HashSet<Month> monthHashSet = new HashSet<>(monthList);
+		
 		
 		monthHashSet.add(new Month("desembre"));
 		monthHashSet.add(new Month("desembre"));

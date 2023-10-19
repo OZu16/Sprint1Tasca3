@@ -43,7 +43,7 @@ public class Restaurant implements Comparable<Object> {
 	}
 	
 	
-	
+	@Override
 	public int compareTo(Object object) {
 		
 		Restaurant restaurant = (Restaurant) object;
