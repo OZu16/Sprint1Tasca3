@@ -28,7 +28,7 @@ public class MainClass {
         
         a.textToHashMap(countries);
         points = a.gamePoints(countries);
-        a.textPointsAndUser(points, userName);
+        a.pointsAndUserToTxt(points, userName);
         
     }
 

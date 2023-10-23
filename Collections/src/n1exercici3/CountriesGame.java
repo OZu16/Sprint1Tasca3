@@ -54,7 +54,7 @@ import java.util.Scanner;
 	  return points;
 	}
 	
-	public static void textPointsAndUser(int points, String userName) {
+	public static void pointsAndUserToTxt(int points, String userName) {
 		
 		String rutaClassificacio = "C:\\Users\\Gerard\\Desktop\\countries\\classificacio.txt";
 		

@@ -10,7 +10,7 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		List<Month> monthList = new ArrayList<Month>();
-		HashSet<Month> monthHashSet = new HashSet<>();
+		
 		
 		monthList.add(new Month("gener"));
 		monthList.add(new Month("febrer"));
@@ -28,14 +28,16 @@ public class MainClass {
 		
 		System.out.println("array list:\n");
 		for (Month month : monthList) {
-			monthHashSet.add(month);
             System.out.println(month.getName());
         }
 		
 		
+		HashSet<Month> monthHashSet = new HashSet<>(monthList);
+		
 		
 		monthHashSet.add(new Month("desembre"));
 		monthHashSet.add(new Month("desembre"));
+		
 		
 		System.out.println("\nhashset bucle for:\n");
         for (Month month : monthHashSet) {
