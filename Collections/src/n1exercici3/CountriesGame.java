@@ -14,22 +14,16 @@ import java.util.Scanner;
 		static Scanner sc = new Scanner(System.in);
 	
 		
-		public static void textToHashMap( Map<String, String> countries){
+		public static void textToHashMap( Map<String, String> countries) throws FileNotFoundException{
 	    	
-	        String rutaCountries = "C:\\Users\\Gerard\\Desktop\\countries\\countries.txt";
-	        
-	        try {
-	            Scanner scanner = new Scanner(new File(rutaCountries));
-	
-	            while (scanner.hasNextLine()) {
-	                String[] linea = scanner.nextLine().split(" ");
-	                countries.put(linea [0], linea[1]);
-	            }
-	
-	            
-	        } catch (FileNotFoundException e) {
-	        	e.printStackTrace();
-	        }
+	        String rutaCountries = new File (".\\src\\countries.txt").getAbsolutePath();
+	        File countriesTxt = new File(rutaCountries);
+	        Scanner scanner = new Scanner(countriesTxt);
+
+			while (scanner.hasNextLine()) {
+			    String[] linea = scanner.nextLine().split(" ");
+			    countries.put(linea [0], linea[1]);
+			}
 	  }
 	  
 	  
@@ -54,20 +48,17 @@ import java.util.Scanner;
 	  return points;
 	}
 	
-	public static void pointsAndUserToTxt(int points, String userName) {
+	public static void pointsAndUserToTxt(int points, String userName) throws IOException, FileNotFoundException {
 		
-		String rutaClassificacio = "C:\\Users\\Gerard\\Desktop\\countries\\classificacio.txt";
+		String rutaClassificacio = new File (".\\src\\classificacio.txt").getAbsolutePath();
 		
-	  try {
 	  	FileWriter writer = new FileWriter(rutaClassificacio);
 	  	writer.write(userName + ": " + points + "\n");
 	  	writer.close();
 	  	
 	  	System.out.println("puntuacio registrada al document classificacio.txt");
 	
-	  } catch (IOException e) {
-	      e.printStackTrace();
-	  }
+	  
 	}
 
 }

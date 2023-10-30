@@ -26,9 +26,21 @@ public class MainClass {
         System.out.println("introdueix nom usuari");
         userName = sc.nextLine();
         
-        a.textToHashMap(countries);
+        try {
+        	a.textToHashMap(countries);
+        }catch(FileNotFoundException e) {
+        	e.printStackTrace();
+        }
+        
         points = a.gamePoints(countries);
-        a.pointsAndUserToTxt(points, userName);
+        
+       
+        try {
+			a.pointsAndUserToTxt(points, userName);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+          	   
         
     }
 
